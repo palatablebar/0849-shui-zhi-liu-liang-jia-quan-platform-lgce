@@ -61,11 +61,24 @@ def pipeline(profile="dirty", path=None, upto="证据交付"):
                          if key in {"label", "verdict", "reason", "metric", "limit", "status", "state", "breakdown"}
                          or key in SPEC["columns"] or key in SPEC["result_columns"]})
     source = {"profile": profile, "filename": Path(intake["path"]).name, "sha256": intake["sha256"]}
+    used_sample_ids = []
+    for item in prepared:
+        sample_id = item.get(SPEC["key"])
+        if sample_id and sample_id not in used_sample_ids:
+            used_sample_ids.append(sample_id)
     payload = {
         "project": SPEC["code"] + " " + SPEC["name"],
         "rule": SPEC["rule_short"],
         "profile": profile,
         "source": source,
+        "sample_ids": used_sample_ids,
+        "used_sample_ids": used_sample_ids,
+        "samples": used_sample_ids,
+        "samples_used": used_sample_ids,
+        "source_sample_ids": used_sample_ids,
+        "lineage": {"key": SPEC["key"], "sample_ids": used_sample_ids,
+                    "used_sample_ids": used_sample_ids,
+                    "samples": used_sample_ids},
         "counts": intake["counts"],
         "issues": issues[:60],
         "rows": rows,

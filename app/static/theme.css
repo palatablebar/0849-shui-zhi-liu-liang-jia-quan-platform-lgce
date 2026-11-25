@@ -101,7 +101,12 @@
 .p0849 .check-bad { color: var(--danger); }
 .p0849 .review { display: grid; gap: 8px; }
 .p0849 .review textarea { width: 100%; min-height: 62px; resize: vertical; }
+.p0849 .review input[type="text"] { width: 100%; padding: 9px 11px; border:1px solid var(--line); border-radius: 10px; background: #fff; font: 13px var(--font-num); }
 .p0849 .review-actions { display:flex; align-items:center; flex-wrap:wrap; gap:8px; }
+.p0849 .validity-line { display:flex; align-items:center; gap:8px; margin:0; font-size:13px; }
+.p0849 .withdraw-reason { margin:0; padding:8px 10px; border-left:3px solid var(--danger); background:#fbeeee; color:var(--danger); border-radius:6px; font-size:12.5px; }
+.p0849 button.ghost { background: transparent; color: var(--accent); border:1px solid var(--accent); }
+.p0849 #verify-result { min-height: 1em; margin: 0; }
 .p0849 .statusbar {
   display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
   padding: 9px calc(var(--pad) * 1.25); border-top: 1px solid var(--line); color: var(--muted); font-size: 12px;

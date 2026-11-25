@@ -12,6 +12,7 @@ from app.routes import api
 
 def create_app(database=None):
     app = Flask(__name__)
+    app.url_map.strict_slashes = False
     app.config["MAX_CONTENT_LENGTH"] = MAX_FILE + 64 * 1024
     app.extensions["runs"] = Store(database or os.getenv("WORKBENCH_DB", str(ROOT / "instance" / "workbench.sqlite3")))
     app.register_error_handler(DomainIssue, error_response)

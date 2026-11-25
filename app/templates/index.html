@@ -30,13 +30,35 @@
     <article class="panel" id="panel-review">
       <div class="panel-head"><h2>批次复核</h2><span class="hint" id="revision">rev 0</span></div>
       <div class="review">
+        <p class="validity-line" id="validity-line" hidden>
+          当前效力
+          <span class="verdict" id="validity-state" data-v="PASS">有效</span>
+        </p>
+        <p class="withdraw-reason" id="withdraw-reason" hidden></p>
         <label for="comment">复核意见</label>
         <textarea id="comment" placeholder="核验来源、边界与批次结论"></textarea>
         <div class="review-actions">
           <button id="sign" type="button" disabled>签发</button>
           <button id="hold" type="button" disabled>暂缓</button>
+          <button id="verify-evidence" type="button" disabled>复核查验证据/校验值</button>
           <a id="download" href="#" download hidden>下载复核证据</a>
         </div>
+        <p class="hint checksum-line" id="checksum-line" hidden></p>
+        <p class="hint" id="verify-result" aria-live="polite"></p>
+      </div>
+    </article>
+    <article class="panel" id="panel-spotcheck">
+      <div class="panel-head"><h2>抽检确认与撤回</h2><span class="hint">水样编号无效后级联失效</span></div>
+      <div class="review">
+        <label for="spot-sample">水样编号</label>
+        <input id="spot-sample" type="text" placeholder="例如 W002" autocomplete="off">
+        <label for="spot-reason">无效 / 撤回原因</label>
+        <textarea id="spot-reason" placeholder="例如：抽检锰浓度复测不合格"></textarea>
+        <div class="review-actions">
+          <button id="spot-invalidate" type="button">确认无效并撤回相关批次</button>
+          <button id="spot-refresh" type="button" class="ghost">刷新撤回记录</button>
+        </div>
+        <ul class="issues" id="withdraw-list"><li class="empty">暂无撤回记录</li></ul>
       </div>
     </article>
   </section>
