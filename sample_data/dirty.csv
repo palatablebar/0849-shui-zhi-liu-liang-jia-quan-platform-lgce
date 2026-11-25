@@ -1,0 +1,9 @@
+﻿sample_id,station_id,sample_at,concentration,flow_m3s,detection_limit,qualifier,unit
+W007,S1,2026-11-01 08:00,8.0,1,0.1,,mg/L
+W008,S4,2026-11-01 08:00,0,1,,ND,mg/L
+W009,S5,2026-11-01 08:00,1,-1,0.1,,mg/L
+W010,S6,2026-11-01 08:00,1,1,0.1,,ppt
+W011,S7,2026-11-01 08:00,1,1,0.1,,mg/L
+W012,S7,2026-11-01 08:00,2,1,0.1,,mg/L
+
+W001,S1,2026-11-01 08:00,1.0,1,0.1,,mg/L,surplus

@@ -1,0 +1,33 @@
+.p0849 .shell{display:grid;grid-template-columns:150px minmax(0,1fr)}
+.p0849 .rail{position:sticky;top:0;height:100vh;background:var(--ink);color:var(--surface);border:0}
+.p0849 .rail .brand,.p0849 .rail .rail-label,.p0849 .rail .rail-note{color:#dbf2ee}
+.p0849 .rail #stage-nav button[aria-pressed=true]{border:0;border-radius:100px;background:var(--surface);color:var(--ink)}
+.p0849 .toolbar{border:0;background:transparent;padding-bottom:27px}
+.p0849 .kpis{gap:8px}.p0849 .metric{border:0;border-radius:100px;text-align:center;padding:12px;min-height:75px}
+.p0849 .metric strong{font-size:30px;color:var(--accent)}
+.p0849 .board{grid-template-columns:minmax(260px,1fr) minmax(0,1.7fr);grid-template-areas:"chart table" "issues table" "ledger review"}
+.p0849 #panel-table{grid-area:table}.p0849 #panel-chart{grid-area:chart}.p0849 #panel-issues{grid-area:issues}.p0849 #panel-ledger{grid-area:ledger}.p0849 #panel-review{grid-area:review}
+.p0849 .panel{border:0}.p0849 #panel-chart{background:#e5f5f1}
+.p0849 .gauge{border:4px solid var(--surface)}
+
+@media (max-width: 980px) {
+  .p0849 .board { grid-template-columns: minmax(0,1fr) !important; grid-template-areas: none !important; }
+  .p0849 .board > * { grid-column: auto !important; grid-row: auto !important; grid-area: auto !important; }
+  .p0849 .kpis { grid-template-columns: repeat(2,minmax(0,1fr)) !important; }
+}
+@media (max-width: 680px) {
+  .p0849 .shell { display: block !important; }
+  .p0849 .rail { height: auto !important; min-height: 0 !important; position: static !important; padding: 10px 12px !important; }
+  .p0849 .rail::after { display: none !important; }
+  .p0849 .rail-label, .p0849 .rail-note { display: none !important; }
+  .p0849 #stage-nav { flex-direction: row !important; flex-wrap: nowrap !important; overflow-x: auto !important; }
+  .p0849 #stage-nav button { width: auto !important; border-left: 0 !important; border-bottom: 2px solid transparent !important; white-space: nowrap; }
+  .p0849 #stage-nav button[aria-pressed="true"] { border-bottom-color: var(--accent) !important; }
+  .p0849 .toolbar { padding: 16px 14px !important; }
+  .p0849 .toolbar h1 { font-size: clamp(22px,8vw,38px); }
+  .p0849 main { padding: 8px !important; }
+  .p0849 .kpis { grid-template-columns: repeat(2,minmax(0,1fr)) !important; }
+  .p0849 .metric:nth-child(2) { transform: none !important; }
+  .p0849 .panel, .p0849 .metric { min-width: 0 !important; }
+  .p0849 .table-wrap { max-width: 100%; overflow-x: auto; }
+}
